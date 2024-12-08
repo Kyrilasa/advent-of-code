@@ -10,16 +10,8 @@ pub fn solve() {
         .filter(|list| safe_by_removal(list))
         .collect();
     
-    let difference: Vec<_> = safe_removable.iter()
-        .filter(|list| !monotonous.contains(list))
-        .collect();
-    
     println!("Part 1 (monotonous): {}", monotonous.len());
     println!("Part 2 (safe removable): {}", safe_removable.len());
-    println!("Lists that need one removal to become monotonous:");
-    for list in difference {
-        println!("{:?}", list);
-    }
 }
 
 pub fn read_input(path: &str) -> Result<Vec<Vec<i32>>> {
